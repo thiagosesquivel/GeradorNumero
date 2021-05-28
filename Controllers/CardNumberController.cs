@@ -33,7 +33,7 @@ namespace GeradorNumero.Controllers{
         ){
            var currentUser = await context.Users.FirstOrDefaultAsync(x=>x.Email==user.Email);
            var cardNumber =  new CardNumber();
-           cardNumber.Number = new Random().Next(999);
+           cardNumber.Number = new Random().Next();
            cardNumber.User = currentUser;
            cardNumber.IdUser = currentUser.Id;
            context.CardNumbers.Add(cardNumber);
